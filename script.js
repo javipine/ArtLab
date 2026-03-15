@@ -1,29 +1,30 @@
-.canvas-prenda {
-  position: relative;
-  width: 400px;
-  height: 500px;
-  border: 2px dashed #ccc;
-  margin: 0 auto;
-  overflow: hidden;
-}
+const dropZone = document.getElementById('drop-zone');
+const printOverlay = document.getElementById('user-print');
+const placeholder = document.getElementById('placeholder-text');
 
-.base-item {
-  width: 100%;
-  z-index: 1;
-}
+// Prevenir comportamiento por defecto del navegador
+['dragover', 'drop'].forEach(evt => {
+    dropZone.addEventListener(evt, e => e.preventDefault());
+});
 
-.print-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px; /* Tamaño del área de impresión */
-  height: 150px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+// Resaltar zona al arrastrar
+dropZone.addEventListener('dragover', () => dropZone.style.borderColor = '#000');
+dropZone.addEventListener('dragleave', () => dropZone.style.borderColor = '#ccc');
+
+// Manejar la caída del archivo
+dropZone.addEventListener('drop', (e) => {
+    dropZone.style.borderColor = '#ccc';
+    const file = e.dataTransfer.files[0];
+    aplicarImagen(file);
+});
+
+function aplicarImagen(file) {
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            printOverlay.style.backgroundImage = `url('${event.target.result}')`;
+            placeholder.innerText = ""; // Quitar el texto
+        };
+        reader.readAsDataURL(file);
+    }
 }
