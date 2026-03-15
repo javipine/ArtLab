@@ -43,4 +43,11 @@ document.getElementById('btn-descargar').addEventListener('click', () => {
         enlace.click();
     });
 });
-
+// Añade esta función al final de tu script.js
+function seleccionarPredefinido(url) {
+    const printOverlay = document.getElementById('user-print');
+    const placeholder = document.getElementById('placeholder-text');
+    
+    printOverlay.style.backgroundImage = `url('${url}')`;
+    placeholder.innerText = ""; // Limpia el texto instructivo
+}
