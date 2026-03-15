@@ -103,7 +103,33 @@ button:hover {
     object-fit: contain;
     background: white;
 }
+/* Colores por defecto (Modo Claro) */
+:root {
+  --bg-color: #f4f4f4;
+  --container-bg: #ffffff;
+  --text-color: #2b2b2b;
+  --border-color: #dddddd;
+  --color-acento: #ff4757;
+}
 
+/* Colores para Modo Oscuro */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: #333333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease; /* Para que el cambio sea suave */
+}
+
+.canvas-prenda {
+  background: var(--container-bg);
+  border: 2px solid var(--border-color);
+}
 .thumb:hover {
     border-color: var(--color-acento);
     transform: translateY(-3px);
