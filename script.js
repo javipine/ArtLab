@@ -28,3 +28,19 @@ function aplicarImagen(file) {
         reader.readAsDataURL(file);
     }
 }
+document.getElementById('btn-descargar').addEventListener('click', () => {
+    const areaCaptura = document.getElementById('drop-zone');
+
+    // Usamos html2canvas para renderizar el div como imagen
+    html2canvas(areaCaptura, {
+        useCORS: true, // Permite cargar imágenes externas si las hubiera
+        backgroundColor: null // Mantiene la transparencia si el fondo es vacío
+    }).then(canvas => {
+        // Creamos un link temporal para la descarga
+        const enlace = document.createElement('a');
+        enlace.download = 'mi-diseno-personalizado.png';
+        enlace.href = canvas.toDataURL("image/png");
+        enlace.click();
+    });
+});
+
