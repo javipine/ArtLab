@@ -23,6 +23,53 @@
       <p id="placeholder-text">Arrastra tu diseño aquí</p>
     </div>
   </div>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Interactiva | Personalizador de Ropa</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <main class="shop-container">
+        <header>
+            <h1>Colección Interactiva 2026</h1>
+            <p>Arrastra tu arte sobre la prenda para ver cómo queda.</p>
+        </header>
+
+        <div id="drop-zone" class="canvas-prenda">
+            <img src="assets/camiseta.png" id="base-item" alt="Camiseta Base">
+            
+            <div id="user-print" class="print-overlay">
+                <span id="placeholder-text">Suelta tu diseño aquí</span>
+            </div>
+        </div>
+
+        <section class="controles">
+            <input type="file" id="file-input" accept="image/*" hidden>
+            
+            <button onclick="document.getElementById('file-input').click()" class="btn-secundario">
+                📁 Subir Imagen
+            </button>
+            
+            <button id="btn-descargar" class="btn-primario">
+                📸 Descargar Vista Previa
+            </button>
+        </section>
+
+        <footer>
+            <p>Proyecto desarrollado para GitHub Portfolio</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
   <input type="file" id="file-input" accept="image/*" hidden>
   <button onclick="document.getElementById('file-input').click()">O sube un archivo</button>
