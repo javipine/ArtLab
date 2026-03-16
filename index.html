@@ -3,18 +3,15 @@
 </div>
 <div class="contenedor-prenda">
   <img src="assets/tshirt-base.png" class="base">
-  
-  <div id="capa-estampado" class="estampado"></div>
+   <div id="capa-estampado" class="estampado"></div>
 </div>
-
 <div class="controles">
   <button onclick="cambiarDiseno('diseno1.png')">Estampado Cyberpunk</button>
   <button onclick="cambiarDiseno('diseno2.png')">Estampado Minimalista</button>
 </div>
 <div class="shop-container">
   <h2>Personalizador Interactivo v1.0</h2>
-  
-  <div id="drop-zone" class="canvas-prenda">
+   <div id="drop-zone" class="canvas-prenda">
     <img src="assets/mockup-camiseta.png" id="base-item" alt="Camiseta Base">
     
     <div id="user-print" class="print-overlay">
@@ -33,7 +30,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-
     <main class="shop-container">
         <header>
             <h1>Colección Interactiva 2026</h1>
@@ -47,7 +43,6 @@
                 <span id="placeholder-text">Suelta tu diseño aquí</span>
             </div>
         </div>
-
         <section class="controles">
             <input type="file" id="file-input" accept="image/*" hidden>
             
@@ -55,18 +50,16 @@
             
             <button id="btn-descargar" class="btn-primario">📸 Descargar Vista Previa</button>
         </section>
-
         <footer>
             <p>Proyecto desarrollado para GitHub Portfolio</p>
         </footer>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>
 
   <input type="file" id="file-input" accept="image/*" hidden>
-  <button onclick="document.getElementById('file-input').click()">O sube un archivo</button>
+  <button onclick="document.getElementById('file-input').click()">📸 sube un archivo</button>
 </div>
 <section class="galeria-ejemplos">
     <h3>Elige un diseño de nuestra colección:</h3>
